@@ -1,96 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Play Station Gaming 2.0</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #121212;
-      color: #ffffff;
-      margin: 0;
-      padding: 0;
-    }
-    header {
-      background-color: #1f1f1f;
-      text-align: center;
-      padding: 30px;
-    }
-    header h1 {
-      font-size: 2.5em;
-    }
-    nav {
-      background: #333;
-      text-align: center;
-      padding: 10px 0;
-    }
-    nav a {
-      margin: 0 15px;
-      color: #00ffff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    section {
-      padding: 40px 20px;
-      text-align: center;
-    }
-    .video-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-      margin-top: 20px;
-    }
-    iframe {
-      width: 300px;
-      height: 170px;
-    }
-    footer {
-      background: #1f1f1f;
-      color: #ccc;
-      text-align: center;
-      padding: 20px;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tarun Mondal">
+    <meta name="description" content="Welcome to Play Station Gaming 2.0! Watch gaming videos, join the community, and stay updated.">
+    <title>Play Station Gaming 2.0</title>
+    <link rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/PlayStation_logo_2019.svg/500px-PlayStation_logo_2019.svg.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        header {
+            background-color: #0a74da;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+        header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .content {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .videos {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 20px;
+        }
+        .video-embed {
+            background-color: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        iframe {
+            width: 100%;
+            height: 315px;
+            border: none;
+        }
+        footer {
+            background-color: #0a74da;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
 
 <header>
-  <h1>🎮 Play Station Gaming 2.0</h1>
-  <p>Powered by Tarun Mondal | Contact: <a href="mailto:tarunmondal.play@gmail.com">tarunmondal.play@gmail.com</a></p>
+    <h1>🎮 Play Station Gaming 2.0</h1>
+    <p>Welcome to my gaming world! Here you'll find all the exciting gameplay and updates.</p>
 </header>
 
-<nav>
-  <a href="#videos">Gameplay Videos</a>
-  <a href="#about">About</a>
-  <a href="#contact">Contact</a>
-  <a href="https://www.youtube.com/@PlayStation_Gaming_2.0" target="_blank">YouTube Channel</a>
-</nav>
+<div class="content">
+    <section class="videos">
+        <div class="video-embed">
+            <h2>Video 1: Epic Game Playthrough</h2>
+            <iframe src="https://www.youtube.com/embed/abc123" allowfullscreen></iframe>
+        </div>
+        <div class="video-embed">
+            <h2>Video 2: Top Gaming Moments</h2>
+            <iframe src="https://www.youtube.com/embed/xyz789" allowfullscreen></iframe>
+        </div>
+        <div class="video-embed">
+            <h2>Video 3: Gaming Tips and Tricks</h2>
+            <iframe src="https://www.youtube.com/embed/ghi456" allowfullscreen></iframe>
+        </div>
+    </section>
 
-<section id="videos">
-  <h2>🔥 Latest Gameplay Highlights</h2>
-  <div class="video-container">
-    <iframe src="https://www.youtube.com/embed/_p1Za4vq-XY" title="Trevor Mission"></iframe>
-    <iframe src="https://www.youtube.com/embed/YlKJB1-jKgU" title="GTA V Action"></iframe>
-    <iframe src="https://www.youtube.com/embed/LfTO_5P9xOc" title="Stealth Mode"></iframe>
-  </div>
-</section>
+    <section class="about">
+        <h2>About Play Station Gaming 2.0</h2>
+        <p>Play Station Gaming 2.0 is dedicated to bringing you the best gaming experiences with exciting playthroughs, tips, and more. Join the community and stay updated with the latest videos!</p>
+    </section>
 
-<section id="about">
-  <h2>🎯 About This Channel</h2>
-  <p>Welcome to <strong>Play Station Gaming 2.0</strong> – your destination for exciting missions, storylines, and open-world adventures! We bring you epic gameplay, intense action scenes, and legendary characters from PS5 games like GTA V, Spider-Man, and more!</p>
-</section>
-
-<section id="contact">
-  <h2>📧 Get in Touch</h2>
-  <p>For collabs, shoutouts, or queries, reach out at: <a href="mailto:tarunmondal.play@gmail.com">tarunmondal.play@gmail.com</a></p>
-</section>
+    <section class="contact">
+        <h2>Contact Me</h2>
+        <p>If you have any questions or feedback, feel free to reach out!</p>
+        <p>Email: <a href="mailto:tarunmondal.play@gmail.com">tarunmondal.play@gmail.com</a></p>
+    </section>
+</div>
 
 <footer>
-  <p>© 2025 Play Station Gaming 2.0 | Created by Tarun Mondal | Hosted on GitHub Pages</p>
+    <p>© 2025 Play Station Gaming 2.0 | All Rights Reserved</p>
 </footer>
 
 </body>
