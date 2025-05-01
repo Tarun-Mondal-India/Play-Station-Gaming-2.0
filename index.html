@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Team Connect - Memory Match Game</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #fef9d7, #d299c2);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    .game-board {
+      display: grid;
+      grid-template-columns: repeat(4, 100px);
+      grid-gap: 15px;
+      margin-top: 20px;
+    }
+
+    .card {
+      width: 100px;
+      height: 100px;
+      background-color: #ffffff;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      transition: transform 0.3s;
+      position: relative;
+    }
+
+    .card.flipped {
+      background-color: #ffefd5;
+    }
+
+    .card .emoji {
+      visibility: hidden;
+    }
+
+    .card.flipped .emoji {
+      visibility: visible;
+    }
+
+    .popup {
+      background: #fff3cd;
+      border: 1px solid #ffeeba;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      max-width: 400px;
+      text-align: center;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h1>🎯 Team Connect: Memory Match Game</h1>
+  <p>Match the emojis and spark conversations!</p>
+  <div class="game-board" id="gameBoard"></div>
+  <div class="popup" id="popup"></div>
+
+  <script>
+    const emojis = ['💻', '☕', '😂', '📈', '🎧', '💬'];
+    const questions = [
+      "What emoji best describes your morning today?",
+      "What’s a work skill you’re proud of developing recently?",
+      "If your team had a mascot, what would it be and why?",
+      "What’s your go-to productivity trick?",
+      "What’s your favorite work tool/app?",
+      "Share a funny or surprising work moment.",
+      "What’s a professional goal you're excited about?",
+      "If your job were a board game, which would it be?",
+      "What small win are you celebrating this week?",
+      "What music keeps you focused at work?"
+    ];
+
+    let cards = [...emojis, ...emojis].sort(() => 0.5 - Math.random());
+    let firstCard = null;
+    let lockBoard = false;
+    let matchCount = 0;
+
+    const gameBoard = document.getElementById('gameBoard');
+    const popup = document.getElementById('popup');
+
+    function createCard(emoji) {
+      const card = document.createElement('div');
+      card.classList.add('card');
+      card.dataset.emoji = emoji;
+
+      const emojiSpan = document.createElement('span');
+      emojiSpan.classList.add('emoji');
+      emojiSpan.textContent = emoji;
+
+      card.appendChild(emojiSpan);
+
+      card.addEventListener('click', () => {
+        if (lockBoard || card.classList.contains('flipped')) return;
+
+        card.classList.add('flipped');
+
+        if (!firstCard) {
+          firstCard = card;
+        } else {
